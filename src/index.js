@@ -1,14 +1,15 @@
 import "./sass/reset.scss";
 import "./sass/main.scss";
-import lodash from "lodash";
+import card from "./components/Cards/card.html";
+
+import { app } from "./utils/document";
 
 function component() {
   const element = document.createElement("div");
+  app.innerHTML = card;
 
-  // Lodash, now imported by this script
-  element.innerHTML = lodash.join(["Hello", "webpack"], " ");
-
-  return element;
+  return app;
 }
 
 document.body.appendChild(component());
+// https://api.adviceslip.com/advice
