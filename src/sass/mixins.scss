@@ -1,0 +1,11 @@
+//responsive mixins
+@mixin media-breakpoint-up($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin media-breakpoint-down($breakpoint) {
+  @media (max-width: calc($breakpoint - 0.2px)) {
+    @content;
+  }
+}
