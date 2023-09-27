@@ -1,5 +1,5 @@
 import card from "./card.html";
-import { app, Api } from "../../utils";
+import { Api } from "../../utils";
 
 const getAdvice = async () => {
   try {
@@ -9,8 +9,9 @@ const getAdvice = async () => {
   }
 };
 
-export default async () => {
-  app.innerHTML = card;
+export default () => {
+  const app = document?.getElementById("app");
+  app.insertAdjacentHTML("beforeend", card);
   const _card = app.querySelector(".card");
   const adviceElement = _card.querySelector("#advice");
   const numberAdvice = _card.querySelector("#advicie-id");

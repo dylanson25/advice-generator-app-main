@@ -54,4 +54,3 @@ class ApiClass {
   }
 }
 export const Api = new ApiClass();
-export const app = document.getElementById("app");

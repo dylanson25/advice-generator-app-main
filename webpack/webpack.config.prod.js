@@ -11,10 +11,13 @@ module.exports = {
   mode: "production",
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./dist/index.html",
+      template: "./src/index.html",
     }),
     new MiniCssExtractPlugin(),
   ],
+  stats: {
+    children: true,
+  },
   module: {
     rules: [
       {
@@ -41,6 +44,13 @@ module.exports = {
       {
         test: /\.html$/i,
         loader: "html-loader",
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
       },
     ],
   },
